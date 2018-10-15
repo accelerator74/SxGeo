@@ -6,6 +6,8 @@
  * @brief SxGeo extension code header.
  */
 
+#define _USE_MATH_DEFINES
+ 
 #include "smsdk_ext.h"
 #include <cstring>
 #include <cmath>

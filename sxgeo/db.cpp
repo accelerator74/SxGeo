@@ -8,6 +8,11 @@
 #include "extension.h"
 #include "sxgeo/db.h"
 
+#ifdef _WIN32
+#include <winsock2.h>
+#pragma comment(lib, "ws2_32.lib")
+#endif // #ifdef _WIN32
+
 namespace sxgeo
 {
 Db::Db(const char *path) :

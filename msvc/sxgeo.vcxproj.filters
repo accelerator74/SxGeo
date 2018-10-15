@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="sxgeo">
+      <UniqueIdentifier>{21f278e0-1730-4a89-8ad2-45f28d44038e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\sxgeo\db.h">
+      <Filter>sxgeo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sxgeo\header.h">
+      <Filter>sxgeo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sxgeo\location.h">
+      <Filter>sxgeo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sxgeo\raw_city_access.h">
+      <Filter>sxgeo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sxgeo\raw_country_access.h">
+      <Filter>sxgeo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sxgeo\raw_region_access.h">
+      <Filter>sxgeo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sxgeo\uint24_t.h">
+      <Filter>sxgeo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\extension.h" />
+    <ClInclude Include="..\smsdk_config.h" />
+    <ClInclude Include="..\..\smsdk_ext.h" />
+    <ClInclude Include="..\sxgeo.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\sxgeo\db.cpp">
+      <Filter>sxgeo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\sxgeo\location.cpp">
+      <Filter>sxgeo</Filter>
+    </ClCompile>
+    <ClCompile Include="..\extension.cpp" />
+    <ClCompile Include="..\..\smsdk_ext.cpp" />
+    <ClCompile Include="..\sxgeo.cpp" />
+  </ItemGroup>
+</Project>
