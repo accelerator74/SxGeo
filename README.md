@@ -6,7 +6,7 @@ SourceMod extension, using Sypex Geo API.
 * SypexGeo API 2.2
 
 ## Installation
-1. Extract file `sxgeo.ext.so` to folder `addons/sourcemod/extension`; Extract file `sxgeo.inc` to folder `addons/sourcemod/include`.
+1. Extract file `sxgeo.ext.so` to folder `addons/sourcemod/extensions`; Extract file `sxgeo.inc` to folder `addons/sourcemod/scripting/include`.
 2. Download last database [SxGeoCity.dat](https://sypexgeo.net/files/SxGeoCity_utf8.zip) and put to path `addons/sourcemod/configs/geoip/SxGeoCity.dat`
 3. Install any sm-plugin that requires the sxgeo extension.
 4. Restart server.
@@ -33,7 +33,7 @@ SourceMod extension, using Sypex Geo API.
 native bool SxGeoCode(const char[] ip, char ccode[3]);
 
 /**
- * Gets the full country name. (max length of output string is 45)
+ * Gets the full country name.
  *
  * @param ip			Ip to determine the country code.
  * @param name			Destination string buffer to store the country name.
@@ -47,7 +47,7 @@ native bool SxGeoCode(const char[] ip, char ccode[3]);
 native bool SxGeoCountry(const char[] ip, char[] name, int maxlength, const char[] lang = "en");
 
 /**
- * Gets the city name. (max length of output string is 45)
+ * Gets the city name.
  *
  * @param ip			Ip to determine the city code.
  * @param name			Destination string buffer to store the city name.
@@ -61,7 +61,7 @@ native bool SxGeoCountry(const char[] ip, char[] name, int maxlength, const char
 native bool SxGeoCity(const char[] ip, char[] name, int maxlength, const char[] lang = "en");
 
 /**
- * Gets the full region name. (max length of output string is 45)
+ * Gets the full region name.
  *
  * @param ip			Ip to determine the region code.
  * @param name			Destination string buffer to store the region name.
@@ -86,7 +86,7 @@ native float SxGeoLatitude(const char[] ip);
  * Gets the city's longitude
  *
  * @param ip			Ip to determine the city longitude.
- * @return				The result of the latitude, 0 if latitude is not found
+ * @return				The result of the longitude, 0 if longitude is not found
  */
 native float SxGeoLongitude(const char[] ip);
 
