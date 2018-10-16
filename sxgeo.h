@@ -28,8 +28,8 @@ public:
 	~CSxGeo();
 
 	bool load();
-	bool is_load() const;
 	bool open(const char *path);
+	void unload();
 
 	sxgeo::dbptr_t &operator->()
 	{

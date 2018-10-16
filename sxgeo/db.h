@@ -48,7 +48,7 @@ private:
 	std::uint32_t *b_idx;
 	std::uint32_t *m_idx;
 	std::uint32_t  block_len;
-	std::string    filename;
+	ke::AString    filename;
 
 	std::uint32_t             getLocationOffset(const char *ip) const;
 	std::uint8_t              getFirstIpByte(const char *ip) const;
@@ -68,7 +68,7 @@ private:
 	T *readDb(std::istream &instream, std::uint32_t elements_count, const char *label);
 };
 
-using dbptr_t = std::unique_ptr<Db>;
+using dbptr_t = ke::UniquePtr<Db>;
 
 } // namespace sxgeo
 

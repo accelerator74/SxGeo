@@ -300,7 +300,7 @@ bool Db::readMeta(std::istream &instream)
 	instream.read(reinterpret_cast<char *>(&header), (std::uint32_t)(sizeof(Header) / sizeof(char)));
 	if (!instream.good())
 	{
-		g_pSM->LogMessage(myself, "Can't read header from db \"%s\"", this->filename.c_str());
+		g_pSM->LogMessage(myself, "Can't read header from db \"%s\"", this->filename.chars());
 		return false;
 	}
 
@@ -323,11 +323,11 @@ bool Db::readMeta(std::istream &instream)
 		return false;
 	}
 
-	auto pack = std::make_unique<char[]>(this->header.pack_size);
+	auto pack = ke::MakeUnique<char[]>(this->header.pack_size);
 	instream.read(pack.get(), header.pack_size);
 	if (!instream.good())
 	{
-		g_pSM->LogMessage(myself, "Can't read pack from db \"%s\"", this->filename.c_str());
+		g_pSM->LogMessage(myself, "Can't read pack from db \"%s\"", this->filename.chars());
 		return false;
 	}
 
@@ -366,7 +366,7 @@ T *Db::readDb(std::istream &instream, std::uint32_t elements_count, const char *
 	instream.read(reinterpret_cast<char *>(result), sizeof(T) * elements_count);
 	if (!instream.good())
 	{
-		g_pSM->LogMessage(myself, "Can't read \"%s\" from db \"%s\"", label, this->filename.c_str());
+		g_pSM->LogMessage(myself, "Can't read \"%s\" from db \"%s\"", label, this->filename.chars());
 		return nullptr;
 	}
 

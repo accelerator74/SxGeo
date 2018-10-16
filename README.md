@@ -6,7 +6,7 @@ SourceMod extension, using Sypex Geo API.
 * SypexGeo API 2.2
 
 ## Installation
-1. Extract file `sxgeo.ext.so` to folder `addons/sourcemod/extensions`; Extract file `sxgeo.inc` to folder `addons/sourcemod/scripting/include`.
+1. Extract file `sxgeo.ext` to folder `addons/sourcemod/extensions`; Extract file `sxgeo.inc` to folder `addons/sourcemod/scripting/include`.
 2. Download last database [SxGeoCity.dat](https://sypexgeo.net/files/SxGeoCity_utf8.zip) and put to path `addons/sourcemod/configs/geoip/SxGeoCity.dat`
 3. Install any sm-plugin that requires the sxgeo extension.
 4. Restart server.

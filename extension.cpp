@@ -1,3 +1,5 @@
+#define _USE_MATH_DEFINES
+
 #include "extension.h"
 #include "sxgeo.h"
 
@@ -21,7 +23,7 @@ bool SxGeo_Extension::SDK_OnLoad(char *error, size_t maxlength, bool late)
 
 void SxGeo_Extension::SDK_OnUnload()
 {
-
+	g_sxgeo.unload();
 }
 
 /*******************************
@@ -57,7 +59,7 @@ static cell_t sm_SxGeo_Code(IPluginContext *pCtx, const cell_t *params)
 		return 0;
 	}
 
-	ccode = loc->getRegionIso().c_str();
+	ccode = loc->getRegionIso().chars();
 
 	pCtx->StringToLocal(params[2], 3, ccode ? ccode : "");
 
@@ -85,7 +87,7 @@ static cell_t sm_SxGeo_Country(IPluginContext *pCtx, const cell_t *params)
 		return 0;
 	}
 
-	ccode = loc->getCountryName(lang).c_str();
+	ccode = loc->getCountryName(lang).chars();
 	pCtx->StringToLocal(params[2], params[3], (ccode) ? ccode : "");
 
 	return ccode ? 1 : 0;
@@ -112,7 +114,7 @@ static cell_t sm_SxGeo_City(IPluginContext *pCtx, const cell_t *params)
 		return 0;
 	}
 
-	ccode = loc->getCityName(lang).c_str();
+	ccode = loc->getCityName(lang).chars();
 	pCtx->StringToLocal(params[2], params[3], (ccode) ? ccode : "");
 
 	return ccode ? 1 : 0;
@@ -139,7 +141,7 @@ static cell_t sm_SxGeo_Region(IPluginContext *pCtx, const cell_t *params)
 		return 0;
 	}
 
-	ccode = loc->getRegionName(lang).c_str();
+	ccode = loc->getRegionName(lang).chars();
 	pCtx->StringToLocal(params[2], params[3], (ccode) ? ccode : "");
 
 	return ccode ? 1 : 0;

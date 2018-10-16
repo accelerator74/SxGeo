@@ -27,12 +27,7 @@ CSxGeo::CSxGeo() : m_HandleDB(nullptr)
 
 CSxGeo::~CSxGeo()
 {
-	m_HandleDB.reset();
-}
-
-bool CSxGeo::is_load() const
-{
-	return m_HandleDB != nullptr;
+	m_HandleDB.assign(nullptr);
 }
 
 bool CSxGeo::load()
@@ -49,6 +44,11 @@ bool CSxGeo::load()
 	return true;
 }
 
+void CSxGeo::unload()
+{
+	m_HandleDB.assign(nullptr);
+}
+
 bool CSxGeo::open(const char *path)
 {
 	std::ifstream instream(path, std::ios::in | std::ios::binary);
@@ -58,7 +58,7 @@ bool CSxGeo::open(const char *path)
 		return false;
 	}
 
-	m_HandleDB = std::make_unique<sxgeo::Db>(path);
+	m_HandleDB = ke::MakeUnique<sxgeo::Db>(path);
 	auto ret = m_HandleDB->readFromStream(instream);
 	instream.close();
 	return ret;

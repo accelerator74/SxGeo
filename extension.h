@@ -5,21 +5,14 @@
  * @file extension.h
  * @brief SxGeo extension code header.
  */
-
-#define _USE_MATH_DEFINES
  
 #include "smsdk_ext.h"
 #include <cstring>
 #include <cmath>
-#include <iostream>
 #include <fstream>
 
-// C
-#include <string.h>
-#include <stdarg.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>	// for strncpy(), etc
+#include <am-string.h>
+#include <am-uniqueptr.h>
 
 #if !defined(__GNUC__) || __GNUC__ < 3
 	#define likely(x) (x)

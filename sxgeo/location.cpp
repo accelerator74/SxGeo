@@ -13,7 +13,7 @@ Location::Location(RawCountryAccess country, RawRegionAccess region, RawCityAcce
 	longitude(city.getLon()),
 
 	country_id(country.header->id),
-	country_iso(std::string(country.header->iso, 2)),
+	country_iso(ke::AString(country.header->iso, 2)),
 	country_name_ru(country.name_ru),
 	country_name_en(country.name_en),
 
@@ -33,7 +33,7 @@ Location::Location(RawCountryAccess country) :
 	longitude(country.getLon()),
 
 	country_id(country.header->id),
-	country_iso(std::string(country.header->iso, 2)),
+	country_iso(ke::AString(country.header->iso, 2)),
 	country_name_ru(country.name_ru),
 	country_name_en(country.name_en),
 
@@ -87,12 +87,12 @@ const uint8_t Location::getCountryId() const
 	return country_id;
 }
 
-const std::string& Location::getCountryIso() const
+const ke::AString& Location::getCountryIso() const
 {
 	return country_iso;
 }
 
-const std::string& Location::getCountryName(const char *lang) const
+const ke::AString& Location::getCountryName(const char *lang) const
 {
 	if (strncmp(lang, "ru", 3) == 0)
 	{
@@ -107,12 +107,12 @@ const std::uint32_t Location::getRegionId() const
 	return region_id;
 }
 
-const std::string& Location::getRegionIso() const
+const ke::AString& Location::getRegionIso() const
 {
 	return region_iso;
 }
 
-const std::string& Location::getRegionName(const char *lang) const
+const ke::AString& Location::getRegionName(const char *lang) const
 {
 	if (strncmp(lang, "ru", 3) == 0)
 	{
@@ -127,7 +127,7 @@ const std::uint32_t Location::getCityId() const
 	return city_id;
 }
 
-const std::string& Location::getCityName(const char *lang) const
+const ke::AString& Location::getCityName(const char *lang) const
 {
 	if (strncmp(lang, "ru", 3) == 0)
 	{
