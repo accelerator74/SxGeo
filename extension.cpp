@@ -61,9 +61,9 @@ static cell_t sm_SxGeo_Code(IPluginContext *pCtx, const cell_t *params)
 
 	ccode = loc->getRegionIso().chars();
 
-	pCtx->StringToLocal(params[2], 3, ccode ? ccode : "");
+	pCtx->StringToLocal(params[2], 3, ccode);
 
-	return ccode ? 1 : 0;
+	return (strlen(ccode) != 0) ? 1 : 0;
 }
 
 static cell_t sm_SxGeo_Country(IPluginContext *pCtx, const cell_t *params)
@@ -88,9 +88,9 @@ static cell_t sm_SxGeo_Country(IPluginContext *pCtx, const cell_t *params)
 	}
 
 	ccode = loc->getCountryName(lang).chars();
-	pCtx->StringToLocal(params[2], params[3], (ccode) ? ccode : "");
+	pCtx->StringToLocal(params[2], params[3], ccode);
 
-	return ccode ? 1 : 0;
+	return (strlen(ccode) != 0) ? 1 : 0;
 }
 
 static cell_t sm_SxGeo_City(IPluginContext *pCtx, const cell_t *params)
@@ -115,9 +115,9 @@ static cell_t sm_SxGeo_City(IPluginContext *pCtx, const cell_t *params)
 	}
 
 	ccode = loc->getCityName(lang).chars();
-	pCtx->StringToLocal(params[2], params[3], (ccode) ? ccode : "");
+	pCtx->StringToLocal(params[2], params[3], ccode);
 
-	return ccode ? 1 : 0;
+	return (strlen(ccode) != 0) ? 1 : 0;
 }
 
 static cell_t sm_SxGeo_Region(IPluginContext *pCtx, const cell_t *params)
@@ -142,9 +142,9 @@ static cell_t sm_SxGeo_Region(IPluginContext *pCtx, const cell_t *params)
 	}
 
 	ccode = loc->getRegionName(lang).chars();
-	pCtx->StringToLocal(params[2], params[3], (ccode) ? ccode : "");
+	pCtx->StringToLocal(params[2], params[3], ccode);
 
-	return ccode ? 1 : 0;
+	return (strlen(ccode) != 0) ? 1 : 0;
 }
 
 static cell_t sm_SxGeo_Latitude(IPluginContext *pCtx, const cell_t *params)

@@ -9,7 +9,7 @@
 /* Basic information exposed publicly */
 #define SMEXT_CONF_NAME			"SxGeo"
 #define SMEXT_CONF_DESCRIPTION		"Geographical IP information"
-#define SMEXT_CONF_VERSION		"1.0.1"
+#define SMEXT_CONF_VERSION		"1.0.2"
 #define SMEXT_CONF_AUTHOR		"s1lentq, AlliedModders LLC, Accelerator"
 #define SMEXT_CONF_URL			"https://github.com/Accelerator74/SxGeo"
 #define SMEXT_CONF_LOGTAG		"SxGeo"
